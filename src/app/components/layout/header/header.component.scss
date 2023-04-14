@@ -1,14 +1,28 @@
 .spacer {
-    flex: 1 auto;
+  flex: 1 auto;
 }
 
 // ul[_ngcontent-pah-c14]
 ul {
-    list-style-type: none;
-    display: flex;
-    align-items:center;
-}
+  list-style-type: none;
+  display: flex;
+  align-items:center;
 
-li {
+  li {
     margin-left: 15px;
+
+    a, a:focus {
+      text-decoration: none;
+      color: white
+    }
+
+    a:hover {
+      font-weight: bold;
+    }
+
+    a.active {
+      text-decoration: underline;
+    }
+  }
+
 }
