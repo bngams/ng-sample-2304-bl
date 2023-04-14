@@ -348,6 +348,11 @@
   <p>Apply a treatment on angular expression / Interpolation</p>
   <p>Example: exponentialStrength  {{ 2 | exponentialStrength: 2 }}</p>
 
+  <h2 #title2>Property binding</h2>
+  <p><img [src]=""></p>
+  <p><img src="{{ '' }}"></p>
+  <p>Template variable {{ title2 }}</p>
+  
   <h2>Attributes directives</h2>
   <!-- [disabled]={{ }} -->
   <button disabled="{{btnDisabled}}">Click me!</button>
@@ -359,10 +364,24 @@
 
   <h2>Structural Directives</h2>
   <p *ngIf="btnDisabled">Hidden Text</p>
+  <p *ngIf="btnDisabled else otherTemplate">Hidden Text</p>
+  <!-- 
+  <ng-template [ngIf]>
+    <p>...</p>
+  </ng-template> 
+  -->
+  <ng-template #otherTemplate>
+    Other template
+  </ng-template>
   <ul>
-    <li *ngFor="let w of words">
-      {{ w }} - {{ w.length }}
-    </li>
+    <ng-container *ngFor="let w of words">
+      <li>
+        {{ w }} - {{ w.length }}
+      </li>
+      <li>
+        {{ w }} - {{ w.length }}
+      </li>
+    </ng-container>    
   </ul>
   <!-- ngSwith... -->
 
