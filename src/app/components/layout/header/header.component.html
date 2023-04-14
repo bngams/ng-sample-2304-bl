@@ -3,11 +3,26 @@
         <mat-icon>menu</mat-icon>
     </button>
     <span>My App</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-    </button>
+
+    <span class="spacer"></span>
+
+    <!-- nav>ul>li*4 -->
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>Template syntax</li>
+            <li>Products</li>
+            <li>
+                <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                    <mat-icon>login</mat-icon>
+                </button>
+            </li>
+            <li>
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                    <mat-icon>logout</mat-icon>
+                </button>
+            </li>
+        </ul>
+    </nav>    
+    
 </mat-toolbar>
