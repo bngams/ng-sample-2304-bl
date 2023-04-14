@@ -1,1 +1,4 @@
-<p>product-list works!</p>
+<app-product-card *ngFor="let p of products" [product]="p">
+    <!-- ng content -->
+    <!-- <h2 #title>{{ p.title }}</h2> -->
+</app-product-card>
