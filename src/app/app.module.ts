@@ -7,17 +7,7 @@ import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { InlineSampleComponent } from './components/inline-sample.component';
-import {MatToolbarModuleù} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-
-// Array<Modules>
-const MATERIAL_MODULES = [  
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule
-    //...
-]
+import { MaterialModule } from './modules/material.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +21,7 @@ const MATERIAL_MODULES = [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ...MATERIAL_MODULES
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
