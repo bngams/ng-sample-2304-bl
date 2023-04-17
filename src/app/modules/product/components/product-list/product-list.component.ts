@@ -8,5 +8,5 @@ import { PRODUCTS_MOCK } from '../../mocks/product.mock'
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent {
-  products: Product[] = PRODUCTS_MOCK;
+  products: Array<Product> = PRODUCTS_MOCK;
 }

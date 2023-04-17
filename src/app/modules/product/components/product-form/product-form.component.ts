@@ -1,4 +1,12 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Product } from '../../models/product';
+
+export type ControlsOf<T extends Record<string, any>> = {
+  [K in keyof T]: T[K] extends Record<any, any>
+  ? FormGroup<ControlsOf<T[K]>>
+  : FormControl<T[K]>;
+};
 
 @Component({
   selector: 'app-product-form',
@@ -7,4 +15,17 @@ import { Component } from '@angular/core';
 })
 export class ProductFormComponent {
 
+  // productForm = new  UnTypedFormGroup() ...
+
+  // typed Forms => FormGroup { key: AbstractControls<> }
+  // custom and generic ControlsOf<T>
+  productForm = new FormGroup<ControlsOf<Product>>({
+    title: new FormControl<string>('', {nonNullable: true, validators: [Validators.required]}),
+    price: new FormControl<number | null>(null, Validators.required),
+  });
+
+  submit(): void {
+    console.log(this.productForm.value);
+    const product: Product = this.productForm.value;
+  }
 }

@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'template-syntax', component: TemplateSyntaxComponent },
   // /!\ { path: 'products', loadComponent: () => {... }  },
   // { path: 'products', children: [ Route, Route ] }
-  { path: 'products', data: {preload: true},  loadChildren: () => import('./modules/product/product.module').then(m => m.ProductModule) },
+  { path: 'products', data: {preload: true}, loadChildren: () => import('./modules/product/product.module').then(m => m.ProductModule) },
   { path: '**', component: NotFoundComponent }
 ];
 

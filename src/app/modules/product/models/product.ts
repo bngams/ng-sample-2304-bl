@@ -3,8 +3,8 @@
 
 export type Product = {
     id?: number;
-    title: string;
-    price: number;
+    title?: string; // hack typed forms
+    price?: number | null; // hack typed forms
     description?: string;
     thumbnail?: string;    
 }

@@ -6,6 +6,7 @@ import { ProductFormComponent } from './components/product-form/product-form.com
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductRoutingModule } from './product-routing.module';
 import { MaterialModule } from '../material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,7 +19,9 @@ import { MaterialModule } from '../material.module';
   imports: [
     CommonModule,
     ProductRoutingModule,
-    MaterialModule
+    MaterialModule, 
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ProductModule { }
