@@ -1,2 +1,3 @@
-<app-product-form></app-product-form>
-<app-product-list></app-product-list>
+<!-- $event => data from EventEmitter -->
+<app-product-form (productSubmit)="addProductToList($event)"></app-product-form>
+<app-product-list #myProductList [productsFromParent]="products"></app-product-list>

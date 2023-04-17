@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Product } from '../../models/product';
 
@@ -13,19 +13,28 @@ export type ControlsOf<T extends Record<string, any>> = {
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.scss']
 })
-export class ProductFormComponent {
+export class ProductFormComponent implements OnInit {
+  @Output()
+  productSubmit = new EventEmitter<Product>();
 
   // productForm = new  UnTypedFormGroup() ...
 
   // typed Forms => FormGroup { key: AbstractControls<> }
   // custom and generic ControlsOf<T>
-  productForm = new FormGroup<ControlsOf<Product>>({
-    title: new FormControl<string>('', {nonNullable: true, validators: [Validators.required]}),
-    price: new FormControl<number | null>(null, Validators.required),
-  });
+  productForm!: FormGroup<ControlsOf<Product>>;
+
+  ngOnInit() {
+    this.initForm();
+  }
+
+  initForm(): void {
+    this.productForm = new FormGroup<ControlsOf<Product>>({
+      title: new FormControl<string>('', {nonNullable: true, validators: [Validators.required]}),
+      price: new FormControl<number | null>(null, Validators.required),
+    });
+  }
 
   submit(): void {
-    console.log(this.productForm.value);
-    const product: Product = this.productForm.value;
+    this.productSubmit.emit(this.productForm.value);
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product } from '../../models/product';
 import { PRODUCTS_MOCK } from '../../mocks/product.mock'
 
@@ -8,5 +8,12 @@ import { PRODUCTS_MOCK } from '../../mocks/product.mock'
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent {
+  @Input()
+  productsFromParent!: Product[];
+
   products: Array<Product> = PRODUCTS_MOCK;
+
+  addProduct(product: Product): void {
+    this.products.push(product);
+  }
 }
