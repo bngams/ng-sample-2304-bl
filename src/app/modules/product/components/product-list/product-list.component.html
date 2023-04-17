@@ -1,11 +1,15 @@
 <h2>Products from parent Input</h2>
-<app-product-card *ngFor="let p of productsFromParent" [product]="p">
-    <!-- ng content -->
-    <!-- <h2 #title>{{ p.title }}</h2> -->
-</app-product-card>
-
+<div class="container">
+  <app-product-card *ngFor="let p of productsFromParent" [product]="p">
+      <!-- ngcontent -->
+      <!-- <h2 #title>{{ p.title }}</h2> -->
+  </app-product-card>
+</div>
+<hr>
 <h2>Products</h2>
-<app-product-card *ngFor="let p of products" [product]="p">
-    <!-- ng content -->
-    <!-- <h2 #title>{{ p.title }}</h2> -->
-</app-product-card>
+<div class="container">
+  <app-product-card *ngFor="let p of products" [product]="p">
+      <!-- ng content -->
+      <!-- <h2 #title>{{ p.title }}</h2> -->
+  </app-product-card>
+</div>

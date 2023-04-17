@@ -1,6 +1,7 @@
 <form [formGroup]="productForm" (ngSubmit)="submit()">
   <mat-form-field>
     <input matInput placeholder="Title..." name="title" formControlName="title">
+    <!-- <span *ngIf="productForm.controls['title'].errors.required">Le champs est requis</span> -->
   </mat-form-field>
   <mat-form-field>
     <input matInput placeholder="Price..." name="price"  formControlName="price" type="number">

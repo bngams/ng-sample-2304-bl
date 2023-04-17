@@ -37,5 +37,5 @@ export class ProductDashboardComponent implements OnInit, AfterViewInit {
     this.products.push(product);
     this.productListComponent.addProduct(product);
     // this.productListComponent.products.push(); // /!\ encapsulation object
-  } 
+  }
 }

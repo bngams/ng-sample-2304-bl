@@ -20,11 +20,27 @@
             </li>
             <li>
                 <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                  <!-- do not use like this -->
+                  <!-- <mat-icon matBadge="{{ getProductsLength() }}" matBadgeColor="warn">shopping_bag_outline</mat-icon> -->
+                  
+                  <!-- get not efficient enought  -->
+                  <!-- <mat-icon matBadge="{{ productsLength }}" matBadgeColor="warn">shopping_bag_outline</mat-icon> -->
+
+                  <!-- with subject -->
+                  <!-- <mat-icon matBadge="{{ cartService.productsSubject$ | async }}" matBadgeColor="warn">shopping_bag_outline</mat-icon> -->
+
+                  <mat-icon matBadge="{{ cartService.productsLength }}" matBadgeColor="warn">shopping_bag_outline</mat-icon>
+                </button>
+            </li>
+            <li *ngIf="!authService.loggedIn">
+                <button mat-icon-button class="example-icon favorite-icon" 
+                  aria-label="Example icon-button with heart icon" (click)="fakeLogin()">
                     <mat-icon>login</mat-icon>
                 </button>
             </li>
-            <li>
-                <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <li *ngIf="authService.loggedIn">
+                <button mat-icon-button class="example-icon" 
+                aria-label="Example icon-button with share icon" (click)="fakeLogout()">
                     <mat-icon>logout</mat-icon>
                 </button>
             </li>
