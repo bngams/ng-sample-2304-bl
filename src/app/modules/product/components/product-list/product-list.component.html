@@ -13,3 +13,10 @@
       <!-- <h2 #title>{{ p.title }}</h2> -->
   </app-product-card>
 </div>
+<h2>Products$</h2>
+<div class="container">
+  <app-product-card *ngFor="let p of products$ | async" [product]="p">
+      <!-- ng content -->
+      <!-- <h2 #title>{{ p.title }}</h2> -->
+  </app-product-card>
+</div>
