@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
   }
 
   fakeLogin() {
-    // const credentials = {} as Credentials; 
+    // const credentials = {email: '', pwd: ''} as Credentials; 
     this.authService.login({email: '', pwd: ''});
   }
 

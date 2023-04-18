@@ -56,6 +56,7 @@ export class AuthService {
     this.router.navigateByUrl('/home');
   }
 
+  // /!\ on context changes if used directly on a template
   isLoggedIn(): boolean {
     // check local token
     return this.loggedIn;

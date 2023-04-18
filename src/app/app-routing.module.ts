@@ -3,6 +3,7 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { TemplateSyntaxComponent } from './pages/template-syntax/template-syntax.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ProductGuard } from './guards/auth.guard';
 
 // Routes <=> alias <=> type  <=> Route[]
 const routes: Routes = [
@@ -11,7 +12,7 @@ const routes: Routes = [
   { path: 'template-syntax', component: TemplateSyntaxComponent },
   // /!\ { path: 'products', loadComponent: () => {... }  },
   // { path: 'products', children: [ Route, Route ] }
-  { path: 'products', data: {preload: true}, loadChildren: () => import('./modules/product/product.module').then(m => m.ProductModule) },
+  { path: 'products', data: {preload: true}, canActivateChild: [ProductGuard], loadChildren: () => import('./modules/product/product.module').then(m => m.ProductModule) },
   { path: '**', component: NotFoundComponent }
 ];
 
